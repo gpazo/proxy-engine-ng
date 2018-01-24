@@ -1,0 +1,19 @@
+service: lambda-service
+
+frameworkVersion: ">=1.1.0 <2.0.0"
+
+provider:
+  name: aws
+  runtime: nodejs4.3
+  stage: dev
+  region: us-east-1
+
+functions:
+  test:
+    handler: api/test.submit
+    memorySize: 128
+    description: Submit test function post
+    events:
+      - http:
+          path: test
+          method: post

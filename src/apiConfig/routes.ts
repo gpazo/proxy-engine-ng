@@ -45,6 +45,18 @@ export const routes = [
     handler: 'ViewController.index',
     config: {}
   },
+  {
+    method: [ 'POST' ],
+    path: '/api/v1/lambda/test',
+    handler: 'LambdaController.test',
+    config: {
+      app: {
+        proxyRouter: {
+          ignore: true
+        }
+      }
+    }
+  },
 
   /**
    * Constrain the DefaultController.info handler to accept only GET requests.
